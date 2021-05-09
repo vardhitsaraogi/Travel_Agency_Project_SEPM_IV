@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Reset</title>
+
+<link rel="icon" type="logo" href="Logo.jpg">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+.input-container {
+  display: -ms-flexbox; 
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.icon {
+  padding: 10px;
+  background: rgb(0, 153, 0);
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid rgb(0, 153, 0);
+}
+
+
+.btn {
+  background-color: rgb(0, 153, 0);
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+.btn2 {
+  background-color: rgb(0, 153, 0);
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 150px;
+  opacity: 0.9;
+}
+.btn:hover {
+  opacity: 1;
+}
+</style>
+<style>
+.box {
+  background-color: lightgrey;
+  width: 500px;
+  border-radius: 5px;
+  padding: 50px;
+  margin: 20px;
+}
+</style>
+</head>
+<body style="background-image: url(Travel%203.jpg); background-attachment: fixed;">
+<h2 style="color: rgb(0, 153, 0); text-align: center;">Reset
+Otp sent!</h2>
+
+<form style="max-width:500px;margin:auto">
+    <div class="box">
+    <div class="input-container">
+      <i class="fa fa-key icon"></i>
+      <input class="input-field" type="text" placeholder="OTP" name="otp" id="otp">
+    </div>
+  
+    <div class="input-container">
+      <i class="fa fa-key icon"></i>
+      <input class="input-field" type="password" placeholder="New Password" name="newpass" id="np">
+      <img style="width: 30px; height: 30px;" src="Pass%20Visible.png" onmouseover="mouseoverPass();" onmouseout="mouseoutPass();">
+    </div>
+    
+    <div class="input-container">
+      <i class="fa fa-key icon"></i>
+      <input class="input-field" type="password" placeholder="Confirm Password" name="confpass" id="cp">
+      <img style="width: 30px; height: 30px;" src="Pass%20Visible.png" onmouseover="mouseoverPass1();" onmouseout="mouseoutPass1();">
+    </div>
+  </div>
+  </form>
+  <div style="text-align: center;">
+    <button type="submit" class="btn2" onclick="getInfo()">Get OTP</button>
+    <br>
+    <br>
+    <button type="submit" class="btn2" onclick="check()">Reset</button>
+    <br>
+    <br>
+    <button type="submit" class="btn2" onclick="cleared()">Clear</button>
+    <br>
+    <br>
+   </div> 
+<script>
+var val = Math.floor(1000 + Math.random() * 9000)
+function getInfo()
+{
+alert("Your Otp is: "+val)
+}
+function check()
+{
+var otp=document.getElementById("otp").value
+var np=document.getElementById("np").value
+var cp=document.getElementById("cp").value
+if(val==otp&&np.length!=0&&np==cp)
+{
+  var user=localStorage["user"]
+  var objPeople = JSON.parse(localStorage.getItem('objPeople'));
+  for(i=0;i<objPeople.length;i++)
+{
+  if(user==objPeople[i].un)
+  {
+    objPeople[i].pwd=np
+    localStorage.setItem('objPeople', JSON.stringify(objPeople));
+    break;
+  }
+}
+if(confirm("Are you sure you want to proceed?")==true)
+{
+alert("Password changed!")
+window.location.href="Login.html";
+}
+}
+else if(np!=cp)
+alert("Passwords do not match!")
+else
+alert("Wrong Otp or invalid password!")
+}
+function mouseoverPass(obj) {
+  var obj = document.getElementById('np');
+  obj.type = "text";
+}
+function mouseoutPass(obj) {
+  var obj = document.getElementById('np');
+  obj.type = "password";
+}
+function mouseoverPass1(obj) {
+  var obj = document.getElementById('cp');
+  obj.type = "text";
+}
+function mouseoutPass1(obj) {
+  var obj = document.getElementById('cp');
+  obj.type = "password";
+}
+function cleared() {
+  document.getElementById("cp").value = "";
+  document.getElementById("np").value = "";
+  document.getElementById("otp").value = "";
+  alert("Cleared!")
+}
+</script>
+</body></html>

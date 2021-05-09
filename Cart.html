@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Cart</title>
+
+<link rel="icon" type="logo" href="Logo.jpg">
+<style>
+    .dropbtn {
+      background-color: #4ca8af;
+      color: rgb(19, 18, 18);
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+    }
+    
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    
+    .dropdown-content a:hover {background-color: #ddd;}
+    
+    .dropdown:hover .dropdown-content {display: block;}
+    
+    .dropdown:hover .dropbtn {background-color: #3e858e;}
+    </style>
+    <style>
+        .btn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100px;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+</style>
+<style>
+    .box {
+      background-color: white;
+      width: 500px;
+      border-radius: 5px;
+      padding: 50px;
+      margin: 20px;
+    }
+    </style>
+</head>
+<body style="background-image: url(Travel%203.jpg); background-attachment: fixed;">
+<div style="text-align: center;">
+<h1>My Cart<br></h1>
+<br>
+<br>
+
+<div style="text-align: left;">
+<div class="dropdown">
+    <button class="dropbtn">Select Mode of Payment:</button>
+    <div class="dropdown-content">
+      <a href="Paytm.html">Paytm</a>
+      <a>Debit Card</a>
+      <a>Credit Card</a>
+      <a>Netbanking</a>
+    </div>
+ </div></div>
+ <br>
+ <div class="box">
+  <h2 id="amt"></h2> <br>
+<div style="text-align: left;"><input name="1" class="radio" id="r1" type="radio" value="ptm">
+<img style="width: 125px; height: 58px;" alt="pay" src="Paytm%20%282%29.png" align="middle"><br>
+<input name="1" class="radio" id="r2" type="radio" value="cc">
+Credit Card &nbsp;<img style="width: 137px; height: 28px;" alt="card" src="Card.png" align="middle"><br>
+<br>
+<input name="1" class="radio" id="r3" type="radio" value="dc">
+Debit Card &nbsp; <img style="width: 137px; height: 28px;" alt="card" src="Card.png" align="middle"><br>
+<br>
+<input name="1" class="radio" id="r4" type="radio" value="nb">
+Netbanking &nbsp; &nbsp;<img style="width: 140px; height: 60px;" alt="sbi" src="SBI.png" align="middle"><br>
+<br></div>
+   <button type="button" class="btn" onclick="pay()">Proceed</button>
+   <button type="submit" class="btn" onclick="cleared()">Clear</button>
+<br>
+</div>
+</div>
+<script>
+function la(src)
+{
+window.location=src;
+}
+function pay()
+{
+if (document.getElementById('r1').checked) {
+window.location="Paytm.html";
+}
+else if(document.getElementById("r1").checked == false&&document.getElementById("r2").checked == false&&document.getElementById("r3").checked == false&&document.getElementById("r4").checked == false)
+{
+  alert("Please select an option!")
+}
+else
+alert("We do not accept that currently!")
+}
+function cleared() {
+  document.getElementById("r1").checked = false;
+  document.getElementById("r2").checked = false;
+  document.getElementById("r3").checked = false;
+  document.getElementById("r4").checked = false;
+  alert("Cleared!")
+}
+var am=localStorage["amount"]
+if(am==null||am==undefined)
+{
+  localStorage["amount"]=0
+  var am=localStorage["amount"]
+}
+document.getElementById("amt").innerHTML ="Amount to pay: RS. "+am
+</script>
+</body></html>

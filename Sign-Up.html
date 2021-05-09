@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Sign-Up</title>
+
+<link rel="icon" type="logo" href="Logo.jpg">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+.input-container {
+  display: -ms-flexbox; 
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.icon {
+  padding: 10px;
+  background:  rgb(102, 51, 51);
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid  rgb(102, 51, 51);
+}
+
+
+.btn {
+  background-color:  rgb(102, 51, 51);
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+.btn2 {
+  background-color:  rgb(102, 51, 51);
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 150px;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+</style>
+<style>
+.box {
+  background-color: lightgrey;
+  width: 500px;
+  border-radius: 5px;
+  padding: 50px;
+  margin: 20px;
+}
+</style>
+</head>
+<body style="background-image: url(Travel%203.jpg); background-attachment: fixed;">
+<br>
+<h1 style="text-align: center; color: rgb(102, 51, 51);">Sign-Up</h1>
+<div style="text-align: center; color: rgb(102, 51, 51);">
+<h2>Let's get started! </h2>
+</div>
+<br style="color: rgb(102, 51, 51);">
+<br style="color: rgb(102, 51, 51);">
+ 
+
+
+
+<div style="text-align: center;">
+<form style="max-width:500px;margin:auto">
+    <div class="box">
+    <div class="input-container">
+      <i class="fa fa-user icon"></i>
+      <input class="input-field" type="text" placeholder="Name" name="name" id="nam">
+    </div>
+  
+    <div class="input-container">
+      <i class="fa fa-envelope icon"></i>
+      <input class="input-field" type="text" placeholder="Email" name="email" id="em">
+    </div>
+
+    <div class="input-container">
+        <i class="fa fa-calendar icon"></i>
+        <input class="input-field" type="text" placeholder="DOB (dd/mm/yyyy)" name="birth" id="dob">
+      </div>
+<br>
+      <span style="color: rgb(102, 51, 51);">Gender:</span><input name="1" class="radio" type="radio" value="Male" id="ml"><span style="color: rgb(102, 51, 51);">Male
+        &nbsp; </span><input name="1" class="radio" type="radio" value="Female" id="fml"><span style="color: rgb(102, 51, 51);">
+        Female &nbsp; &nbsp;</span><input name="1" class="radio" type="radio" value="Nota" id="not"><span style="color: rgb(102, 51, 51);">Prefer not to mention</span>
+<br>      <br>
+      <div class="input-container">
+        <i class="fa fa-user icon"></i>
+        <input class="input-field" type="text" placeholder="Username" name="usrnm" id="nUser">
+      </div>
+
+    <div class="input-container">
+      <i class="fa fa-key icon"></i>
+      <input class="input-field" type="password" placeholder="Password" name="psw" id="nPass">
+      <img style="width: 30px; height: 30px;" src="Pass%20Visible.png" onmouseover="mouseoverPass1s();" onmouseout="mouseoutPass1s();">
+    </div>
+
+    <div class="input-container">
+        <i class="fa fa-key icon"></i>
+        <input class="input-field" type="password" placeholder="Confirm Password" name="cpsw" id="cPass">
+        <img style="width: 30px; height: 30px;" src="Pass%20Visible.png" onmouseover="mouseoverPass2s();" onmouseout="mouseoutPass2s();">
+      </div>
+      
+   
+  </div>
+  </form>
+  <button type="submit" class="btn2" onclick="cleareds()">Clear</button>
+  <br>
+  <br>
+  <button type="submit" class="btn2" onclick="regUser()">Register</button>
+    </div>
+
+<!-- 
+<br><h1 style="text-align: center;" id="Login"><br>
+</h1>
+<h1 style="text-align: center;" id="Login"><br>
+</h1>
+<h1 style="text-align: center;" id="Login"><br>
+</h1>
+<h1 style="text-align: center;" id="Login"><br></h1><br><br>
+<h1 style="text-align: center;" id="Login">Login</h1>
+<h2 style="text-align: center;"><span style="font-weight: bold;">Username:</span><br>
+</h2>
+<div style="text-align: center;">
+<input id="un"><br>
+<h2>Password:<br>
+</h2>
+<input id="pwd"><br>
+<br>
+<button type="button" onclick="getInfo()">Proceed</button><br>
+<br>
+
+<h1 style="text-align: center;" id="Login">Delete</h1>
+<h2 style="text-align: center;"><span style="font-weight: bold;">Username:</span><br>
+</h2>
+<div style="text-align: center;">
+<input id="delun"><br>
+<h2>Password:<br>
+</h2>
+<input id="delpwd"><br>
+<br>
+<button type="button" onclick="del()">Delete</button><br>
+<br>
+</div>
+<a href="Home.html"> -->
+<script src="Reg.js">
+
+</script></a></form>
+
+</body></html>

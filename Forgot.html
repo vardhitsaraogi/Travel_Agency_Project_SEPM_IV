@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Forgot</title>
+
+<link rel="icon" type="logo" href="Logo.jpg">
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+.input-container {
+  display: -ms-flexbox; 
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.icon {
+  padding: 10px;
+  background: rgb(102, 0, 0);
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid rgb(102, 0, 0);
+}
+
+.btn {
+  background-color: rgb(102, 0, 0);
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+.btn2 {
+  background-color: rgb(102, 0, 0);
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 150px;
+  opacity: 0.9;
+}
+.btn:hover {
+  opacity: 1;
+}
+</style><style>
+.box {
+  background-color: lightgrey;
+  width: 500px;
+  border-radius: 5px;
+  padding: 50px;
+  margin: 20px;
+}
+</style></head>
+<body style="background-image: url(Travel%203.jpg); background-attachment: fixed;">
+<div style="text-align: center; color: rgb(102, 0, 0);">
+<h1>A quick way to reset your password</h1><span style="background-color: silver;">
+Just tell us your username and the email linked with your user. </span></div>
+<form style="margin: auto; max-width: 500px;">
+    <div class="box">
+    <div class="input-container">
+      <i class="fa fa-user icon"></i>
+      <input class="input-field" placeholder="Username" name="usrnm" id="un" type="text">
+    </div>
+  
+    <div class="input-container">
+      <i class="fa fa-envelope icon"></i>
+      <input class="input-field" placeholder="Email" name="email" id="em" type="text">
+    </div>
+    
+  </div>
+  </form>
+  <div style="text-align: center;">
+    <button type="submit" class="btn2" onclick="getInfo()">Send</button>
+    <br>
+    <br>
+    <button type="submit" class="btn2" onclick="cleared()">Clear</button>
+    <br>
+    <br>
+    </div>
+    <div style="text-align: center;">
+</a><br><span style="background-color: silver;">
+After pressing "Send" a confirmation email will be sent to the email
+id entered!</span><br>
+</div></div>
+<script>
+function getInfo()
+{
+var em=document.getElementById("em").value
+var un=document.getElementById("un").value
+localStorage["user"]=un
+var flag=0
+var objPeople = JSON.parse(localStorage.getItem('objPeople'));
+if(objPeople==null)
+  {
+  localStorage.setItem('objPeople', JSON.stringify([
+    {
+     un: "vardhit",
+     pwd: "1234",
+     em: "vs9249@srmist.edu.in",
+     nm: "Vardhit Saraogi",
+     dob:"02/11/2000",
+     sex: "Male",
+     sum: 0,
+     trans: 0
+     },
+     {
+     un: "kanishk",
+     pwd: "4321",
+     em: "ss6344@srmist.edu.in",
+     nm: "Kanishk Gaur",
+     dob:"15/11/2000",
+     sex: "Male",
+     sum: 0,
+     trans: 0
+     },
+    {
+     un: "sagar",
+     pwd: "5678",
+     em: "kg4571@srmist.edu.in",
+     nm: "Sagar Sharda",
+     dob:"29/07/2001",
+     sex: "Male",
+     sum: 0,
+     trans: 0
+     },
+     ]));
+     var objPeople = JSON.parse(localStorage.getItem('objPeople'));
+  }
+if(em.length==0)
+alert("Enter email!")
+
+else
+{
+  if(un=="vardhit"||un=="kanishk"||un=="sagar")
+  {
+  alert("Cannot change admin passwords!")
+  flag=2
+  }
+  
+  for(i=0;i<objPeople.length;i++){
+  
+  if(em==objPeople[i].em&&un==objPeople[i].un&&flag!=2)
+  {
+  alert("Email sent!")
+  flag=1
+  window.location.href="Reset.html";
+  break;
+  }  
+}
+  /*else if(em!=objPeople[i].em&&un!=objPeople[i].un)
+  {
+    alert("Information does not match")
+    continue;
+  }
+  else{
+    alert("Email not registered!")
+    continue;
+  }
+}*/
+if(flag==0)
+alert("Information does not match")
+}
+}
+function cleared() {
+  document.getElementById("un").value = "";
+  document.getElementById("em").value = "";
+  alert("Cleared!")
+}
+</script>
+</body></html>

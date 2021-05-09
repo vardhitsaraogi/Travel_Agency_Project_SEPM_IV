@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>My Profile</title>
+<style>
+    .container {
+    border: 2px solid #ccc;
+    background-color: #eee;
+    border-radius: 5px;
+    padding: 16px;
+    margin: 16px 0
+    }
+    .container::after {
+    content: "";
+    clear: both;
+    display: table;
+    }
+    .container img {
+    float: left;
+    margin-right: 20px;
+    border-radius: 50%;
+    }
+    .container span {
+    font-size: 20px;
+    margin-right: 15px;
+    }
+    @media (max-width: 500px) {
+    .container {
+    text-align: center;
+    }
+    .container img {
+    margin: auto;
+    float: none;
+    display: block;
+    }
+    }
+    </style>
+</head><link rel="icon" type="logo" href="Logo.jpg"></head><body style="background-image: url(Travel%203.jpg); background-attachment: fixed;">
+<br>
+<div style="text-align: center;">
+<h1>My Profile</h1></div>
+<br>
+<div class="container">
+    <img src="Avatar.png" alt="Avatar" style="width:90px">
+    <div style="text-align: center;"><h1 id="name"><span></span></h1></div>
+    <h2 id="note"></h2>
+    <p id="hist"></p>
+    <h2 id="trav"></h2>
+    <h3 id="cite"></h3>
+  </div>
+<script>
+    var u=localStorage["name"]
+    var objPeople = JSON.parse(localStorage.getItem('objPeople'));
+    var s=0
+    var t=0
+    var c=""
+    var us=localStorage["use"]
+    if(u==null || u==undefined||u.length==0)
+    {
+        document.getElementById("name").innerHTML="No User Logged in!"
+    }
+    else{
+        document.getElementById("name").innerHTML="Name: "+u
+        document.getElementById("note").innerHTML="Past Trips and Transactions: "
+        document.getElementById("trav").innerHTML="Cities visited: "
+        for(i=0;i<objPeople.length;i++)
+        {
+            if(us==objPeople[i].un)
+            {
+                s=objPeople[i].sum
+                t=objPeople[i].trans
+                c=objPeople[i].city
+                //document.getElementById("hist").innerHTML=objPeople[i].sum
+                //document.getElementById("hist").innerHTML="<h3>Total Transactions: "+objPeople[i].trans+"<br><br>Total Spent: "+objPeople[i].sum+"</h3>"
+                //document.getElementById("cite").innerHTML=objPeople[i].city
+            }
+        }
+        document.getElementById("hist").innerHTML="<h3>Total Transactions: "+t+"<br><br>Total Spent: "+s+"</h3>"
+        document.getElementById("cite").innerHTML=c
+        
+    }
+</script>
+</body></html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Paytm</title>
+
+<link rel="icon" type="logo" href="Logo.jpg">
+<style>
+    .btn {
+  background-color: rgb(6, 6, 7);
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100px;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+</style>
+<style>
+    .box {
+      background-color: lightgrey;
+      width: 500px;
+      border-radius: 5px;
+      padding: 50px;
+      margin: 20px;
+    }
+    </style>
+</head>
+<body style="background-image: url(Travel%203.jpg); background-attachment: fixed;">
+<div style="text-align: center;">
+<div style="text-align: left;"></div>
+<h1 style="text-align: left;"><a href="Home.html"><img style="border: 0px solid ; width: 53px; height: 53px;" alt="home" src="Home.png" align="middle"></a>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Pay using
+Paytm!</h1>
+<br>
+<div style="text-align: center;">
+<h2 style="background-color: silver;">Scan the QR code below to process payment!</h2>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img style="width: 326px; height: 330px;" alt="pay" src="Paytm.png"><br>
+<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; <a href="Reviews.html"><button type="button" class="btn"onclick="getInfo()">Done</button></a></div>
+</div>
+<script>
+function getInfo()
+{
+alert("Thank you!")
+var objPeople = JSON.parse(localStorage.getItem('objPeople'));
+var u=localStorage["use"]
+        for(i=0;i<objPeople.length;i++)
+        {
+            if(u==objPeople[i].un)
+            {
+                objPeople[i].sum+=(1*localStorage["amount"])
+                objPeople[i].trans+=1
+                objPeople[i].city+=(localStorage["city"]+", ")
+                //alert(objPeople[i].sum+objPeople[i].trans+objPeople[i].city)
+            }
+        }
+        localStorage.setItem('objPeople', JSON.stringify(objPeople));
+localStorage["amount"]=0
+localStorage["city"]=""
+}
+</script>
+</body></html>

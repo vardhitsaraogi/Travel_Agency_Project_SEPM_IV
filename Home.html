@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Home</title>
+
+<link rel="icon" type="logo" href="Logo.jpg">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>.mapouter{position:relative;text-align:right;height:650px;width:1250px;}</style>
+<style>.gmap_canvas {overflow:hidden;background:none!important;height:650px;width:1250px;}</style>
+<style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .navbar {
+      overflow: hidden;
+      background-color: rgb(255, 255, 255);
+      
+    }
+    
+    .navbar a {
+      float: right;
+      font-size: 17px;
+      color: red;
+      text-align: left;
+      padding: 14px 16px;
+      text-decoration: none;
+    }    
+    .navbar a:hover {
+      background-color: rgb(197, 197, 197);
+    }
+</style>    
+<style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+    * {box-sizing: border-box;}
+    
+    .input-container {
+      display: -ms-flexbox;
+      display: flex;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    
+    .icon {
+      padding: 10px;
+      background: rgba(255, 30, 30, 0.945);
+      color: white;
+      min-width: 50px;
+      text-align: center;
+    }
+    
+    .input-field {
+      width: 170px;
+      padding: 10px;
+      outline: none;
+    }
+    
+    .input-field:focus {
+      border: 2px solid rgba(255, 30, 30, 0.945);
+    }
+    </style>
+    <style>
+        .dropbtn {
+          background-color:rgb(255, 30, 30);;
+          color: white;
+          padding: 16px;
+          font-size: 16px;
+          border: none;
+        }
+        
+        .dropdown {
+          position: relative;
+          display: inline-block;
+        }
+        
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f1f1f1;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
+        
+        .dropdown-content a {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+        }
+        
+        .dropdown-content a:hover {background-color: #ddd;}
+        
+        .dropdown:hover .dropdown-content {display: block;}
+        
+        .dropdown:hover .dropbtn {background-color: rgba(255, 30, 30, 0.945);}
+        </style>
+        <style>
+          .box2 {
+  background-color: rgb(243, 241, 241);
+  width: 350px;
+  border-radius: 5px;
+  padding: 50px;
+  margin: 20px;
+}
+</style>
+        
+</head>
+<body style="background-image: url(Travel%203.jpg); background-attachment: fixed;">
+<div style="text-align: right; color: rgb(0, 0, 153);">
+<div style="text-align: center;">
+<h1><span style="color: red;">Welcome to the all new
+Travel Agency System!</span></h1>
+<span style="color: red; font-weight: bold; background-color: rgb(204, 204, 204);">A website
+which makes booking much easier</span><span style="color: red; background-color: rgb(204, 204, 204);">!</span></div>
+<br>
+<br>
+<button type="submit">
+  <span style="color: red; font-weight: bold; background-color: rgb(247, 244, 244);">
+<h2 id="user">Hello ,</h2></span></button>
+<br><br>
+<div style="text-align: right;" class="navbar">
+    <a onclick="thank()">| Logout |</a>
+    <a href="Sign-Up.html">| Sign-Up |</a>
+    <a href="Login.html">| Login |</a>
+    <a onclick="crt()">| <img style="border: 0px solid ; width: 20px; height: 17px;" src="Cart.png"> |</a>
+    <a href="Contact Us.html">| Contact Us |</a>
+    <a href="About us.html">| About Us |</a>
+    <a href="Profile.html">| My Profile |</a>
+    <a href="Admin.html">| Admin |</a>
+  </div>
+  
+<br>
+<br>
+<div style="text-align: left;"><span style="color: red;">Partnered
+By:</span>&nbsp;&nbsp;<a href="https://www.yatra.com/online/about-yatra.html" target="_blank"><img style="border: 0px solid ; width: 135px; height: 62px;" alt="Yatra.com" src="Yatra.png" align="middle"></a></div>
+<br style="color: red;">
+
+<div style="text-align: left;"><span style="font-weight: bold; color: red;">Start
+Date: </span>
+<br>
+<br>
+<div style="text-align: center;" class="input-container">
+    <i class="fa fa-calendar icon"></i>
+    <input class="input-field" type="date" name="usrnm">
+  </div>
+  <br>
+  
+<span style="font-weight: bold; color: red;">Return
+Date: </span><span style="color: red;">
+    <br>
+    <br>
+    <div class="input-container">
+    <i class="fa fa-calendar icon"></i>
+    <input class="input-field" type="date" placeholder="Username" name="usrnm">
+  </div>
+<br>
+
+<div class="dropdown">
+    <button class="dropbtn">Select Destination</button>
+    <div class="dropdown-content">
+      <a href="Delhi.html">Delhi</a>
+      <a>Mumbai</a>
+      <a>Chennai</a>
+      <a>Kolkata</a>
+      <a>Bangalore</a>
+      <a>Pune</a>
+      <a>Hyderabad</a>
+      <a>Ahmedabad</a>
+    </div>
+  </div>
+<script style="color: red;">
+function la(src)
+{
+window.location=src;
+}
+function thank()
+{
+  var v=localStorage["use"]
+  if(v==null||v=="")
+  {
+    alert("No one is logged in!")
+    window.location="Login.html";
+    //return
+  }
+  else
+  {
+    if(confirm("Are you sure you want to logout?")==true)
+    {
+  localStorage["use"]=""
+  localStorage["redirect"]=0
+alert("See you soon!")
+window.location="Login.html";
+    }
+  }
+}
+var u=localStorage["use"]
+if(u==null)
+{
+  localStorage["use"]=""
+}
+else if(u!=null||u.length!=0)
+{
+  document.getElementById("user").innerHTML="Hello "+u+","
+}
+/*else
+{
+  document.getElementById("user").innerHTML="Hello ,"
+}*/
+//window.onbeforeunload = () => '';
+function crt()
+{
+  var u=localStorage["use"]
+  if(u==null)
+  {
+    localStorage["use"]=""
+    localStorage["name"]=""
+  }
+  else if(u.length!=0)  
+  {
+    
+    window.location="Cart.html"
+  }
+  else{
+    if(confirm("Please log in to view cart!")==true)
+    {
+      window.location="Login.html"
+      //localStorage["amount"]=0
+      localStorage["redirect"]=1
+    }
+  }
+}
+</script>
+&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; <br>
+<br>
+<br>
+<div class="mapouter">
+<div class="gmap_canvas"><iframe id="gmap_canvas" src="https://maps.google.com/maps?q=new%20delhi&amp;t=&amp;z=5&amp;ie=UTF8&amp;iwloc=&amp;output=embed" marginheight="0" marginwidth="0" frameborder="0" height="650" scrolling="no" width="1250"></iframe><a href="https://123movies-to.org">123movies</a><br>
+<a href="https://www.embedgooglemap.net">embedgooglemap.net</a>
+</div>
+</div>
+</span> </div>
+</div>
+</body></html>

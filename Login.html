@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+.input-container {
+  display: -ms-flexbox; 
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.icon {
+  padding: 10px;
+  background: rgb(0, 0, 0);
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid rgb(0, 0, 0);
+}
+
+.btn {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+.btn2 {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100px;
+  opacity: 0.9;
+}
+.btn3 {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 150px;
+  opacity: 0.9;
+}
+.btn:hover {
+  opacity: 1;
+}
+</style>
+<style>
+.box {
+  background-color: lightgrey;
+  width: 500px;
+  border-radius: 5px;
+  padding: 50px;
+  margin: 20px;
+}
+</style>
+<link rel="icon" type="logo" href="Logo.jpg"></head>
+<body style="background-image: url(Travel%203.jpg); background-attachment: fixed;">
+<div style="text-align: center; color: rgb(1, 2, 1);">
+<h1>Login</h1>
+<div style="text-align: left;"><a href="Home.html"><button type="submit" class="btn2">Home</button></a></div>
+<div style="text-align: right;"><a href="Sign-Up.html"><button type="submit" class="btn2">Sign up!</button></a></div>
+<br>
+
+
+
+<script src="Reg.js">
+
+</script>
+
+
+<form style="margin: auto; max-width: 500px;">
+    <div class="box">
+    <div class="input-container">
+      <i class="fa fa-user icon"></i>
+      <input class="input-field" placeholder="Username" name="usrnm" id="un" type="text">
+    </div>
+    
+    <div class="input-container">
+      <i class="fa fa-key icon"></i>
+      <input class="input-field" placeholder="Password" name="psw" id="pwd" type="password">
+      <img style="width: 30px; height: 30px;" src="Pass%20Visible.png" onmouseover="mouseoverPass1l();" onmouseout="mouseoutPass1l();">
+    </div></div>
+  </form>
+  <div style="text-align: center;">
+    <button type="submit" class="btn3" onclick="getInfo()">Login</button>
+    <br>
+    <br>
+    <button type="submit" class="btn3" onclick="clearedl()">Clear</button>
+    <br>
+    <br>
+    <a href="Forgot.html"><button type="submit" class="btn3">Forgot Password</button></a>
+    </div>
+  
+  
+</div></body></html>
